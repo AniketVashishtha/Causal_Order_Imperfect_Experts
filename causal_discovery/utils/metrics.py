@@ -76,30 +76,8 @@ def topological_ordering(graph_edges):
 
 def topological_divergence(ground_truth_edges, predicted_edges):
     """
-    Compute topological divergence: the number of edges in the predicted
-    graph that violate the topological order of the ground truth graph.
-
-    Args:
-        ground_truth_edges: edge list of the ground truth DAG.
-        predicted_edges: edge list of the predicted DAG.
-
-    Returns:
-        int: number of order-violating edges.
-    """
-    order = topological_ordering(ground_truth_edges)
-    divergence = 0
-    for i in range(1, len(order)):
-        for j in range(0, i):
-            if (order[i], order[j]) in predicted_edges:
-                divergence += 1
-    return divergence
-
-
-def topological_divergence_2(ground_truth_edges, predicted_edges):
-    """
-    Compute topological divergence using the predicted graph's own
-    topological order: counts how many ground-truth edges go against
-    the topological order of the predicted graph.
+    Compute topological divergence: counts how many ground-truth edges
+    go against the topological order of the predicted graph.
 
     Args:
         ground_truth_edges: edge list of the ground truth DAG.

@@ -18,7 +18,7 @@ from .graphs import get_graph
 from .strategies.triplet import run_triplet_experiment
 from .utils.metrics import (
     structural_hamming_distance,
-    topological_divergence_2,
+    topological_divergence,
     count_cycles,
     count_isolated_nodes,
 )
@@ -93,7 +93,7 @@ def main():
         print(f"SHD after cycle removal: {shd_acyclic}")
 
         try:
-            td = topological_divergence_2(gt_edges, acyclic_edges)
+            td = topological_divergence(gt_edges, acyclic_edges)
             print(f"Topological Divergence: {td}")
         except Exception:
             print("Topological Divergence: could not compute (graph may still have issues)")
@@ -102,7 +102,7 @@ def main():
         print(f"Connected nodes: {len(connected_a)}, Isolated: {n_isolated_a}")
     elif n_cycles == 0:
         try:
-            td = topological_divergence_2(gt_edges, predicted)
+            td = topological_divergence(gt_edges, predicted)
             print(f"Topological Divergence: {td}")
         except Exception:
             pass

@@ -14,7 +14,7 @@ from .graphs import get_graph
 from .strategies.pairwise import run_pairwise_experiment, PROMPT_TYPES
 from .utils.metrics import (
     structural_hamming_distance,
-    topological_divergence_2,
+    topological_divergence,
     count_cycles,
     count_isolated_nodes,
 )
@@ -71,7 +71,7 @@ def main():
 
     if n_cycles == 0:
         try:
-            td = topological_divergence_2(gt_edges, predicted)
+            td = topological_divergence(gt_edges, predicted)
             print(f"Topological Divergence: {td}")
         except Exception:
             pass

@@ -116,16 +116,4 @@ causal_discovery/
 - **SHD (Structural Hamming Distance)**: Counts reversed, missing, and extra edges between predicted and ground-truth DAGs.
 - **Topological Divergence**: Number of ground-truth edges that violate the topological ordering of the predicted graph.
 
-## Citation
 
-If you use this code, please cite our paper:
-
-```bibtex
-@inproceedings{
-    anonymous2024can,
-    title={Can Large Language Models Build Causal Graphs?},
-    author={Anonymous},
-    booktitle={Conference},
-    year={2024}
-}
-```
