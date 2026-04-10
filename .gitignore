@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.env
+*.pkl
+*.pickle
+.DS_Store
+*.txt
+!requirements.txt
